@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Doe | Game Design & Art Portfolio</title>
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="style2.css">
+  
+  <!-- PRESERVED FONTS: Google Fonts Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION SECTION -->
+  <!-- CHANGE: Header styled as sticky with subtle box-shadow in style.css -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="logo-link">
+        <img src="images/logo.png" alt="Jay Doe Logo Placeholder" class="logo-img" onerror="this.src='https://placehold.co/160x50/03191E/71CD21?text=JAY+DOE'">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <!-- CHANGE: Nav links feature smooth animated underline on hover -->
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#art">Art</a></li>
+          <li><a href="#narratives">Narratives</a></li>
+          <li><a href="#prototypes">Prototypes</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HOME / HERO SECTION (BG: #03191E) -->
+    <!-- CHANGE: Section 1 background set to #03191E with generous padding -->
+    <section id="hero" class="hero-section">
+      <div class="hero-banner">
+        <img src="images/hero-banner.jpg" alt="Explosive Game Art Banner" class="hero-bg-img" onerror="this.src='https://placehold.co/1200x500/03191E/2259C8?text=EXPLOSIVE+GAME+ART+WORLD'">
+        <div class="hero-overlay">
+          <h1 class="hero-title">JAY DOE</h1>
+          <p class="hero-subtitle">Game Designer & Conceptual Artist</p>
+          <p class="hero-welcome">
+            Welcome to my high-octane creative hub! I construct electric game mechanics, grungy cyberpunk worlds, and explosive visual aesthetics that push digital art to its limits.
+          </p>
+          <!-- Navigation Buttons -->
+          <div class="hero-buttons">
+            <a href="#art" class="btn btn-primary">Explore Art</a>
+            <a href="#narratives" class="btn btn-secondary">Writing & Worlds</a>
+            <a href="#prototypes" class="btn btn-accent">Play Prototypes</a>
+          </div>
+        </div>
+      </div>
+
+           <!-- FEATURED ART SLIDING SHOWCASE (MERRY-GO-ROUND) -->
+      <div class="container showcase-wrapper">
+        <h2 class="section-title">Featured Art Showcase</h2>
+        <div class="carousel-container">
+          
+          <div class="carousel-card">
+            <img src="images/featured-art1.jpg" alt="Featured Cyberpunk City Art" onerror="this.src='https://placehold.co/600x400/03191E/71CD21?text=Neon+City+Concept'">
+            <div class="carousel-card-body">
+              <span class="badge">Featured</span>
+              <h3>Neon Overdrive</h3>
+              <p>Key environment art exploring high-contrast lighting and street punk graffiti aesthetics.</p>
+            </div>
+          </div>
+
+          <div class="carousel-card">
+            <img src="images/featured-art2.jpg" alt="Featured Mech Character Art" onerror="this.src='https://placehold.co/600x400/2259C8/FFFCF7?text=Mech+Pilot+Design'">
+            <div class="carousel-card-body">
+              <span class="badge">Featured</span>
+              <h3>Viper-01 Pilot</h3>
+              <p>Character render featuring sharp line-work and dynamic movement posing.</p>
+            </div>
+          </div>
+
+          <div class="carousel-card">
+            <img src="images/featured-art3.jpg" alt="Featured Boss Monster Design" onerror="this.src='https://placehold.co/600x400/03191E/EFDF37?text=Aether+Beast'">
+            <div class="carousel-card-body">
+              <span class="badge">Featured</span>
+              <h3>Aether Titan</h3>
+              <p>Boss entity concept sketch with kinetic particle VFX highlights.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION (BG: #FFFCF7) -->
+    <!-- CHANGE: Alternating background color #FFFCF7 with generous padding -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <!-- Text Column (Left) -->
+          <div class="about-text">
+            <p>
+              Hey! I'm <strong>Jay Doe</strong>, a college student majoring in Interactive Media & Game Design. I thrive on creating fast-paced, visually punchy game mechanics and rebellious, stylized art worlds inspired by street culture, arcade classics, and modern action games.
+            </p>
+            <p>
+              Whether I'm scripting C# mechanics, painting key art concepts, or building intricate narrative bibles, my goal is always to deliver an unforgettable adrenaline rush to players.
+            </p>
+            <div class="social-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-social">Instagram</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-social">YouTube</a>
+            </div>
+          </div>
+
+          <!-- Image Column (Right) -->
+          <div class="about-image">
+            <img src="images/about-jay.jpg" alt="Picture of Jay Doe" onerror="this.src='https://placehold.co/400x400/03191E/71CD21?text=Jay+Doe+Portrait'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ART GALLERY SECTION (BG: #03191E) -->
+    <!-- CHANGE: Alternating background color #03191E with generous padding -->
+    <section id="art" class="art-section">
+      <div class="container">
+        <h2 class="section-title">Art Gallery</h2>
+        <p class="section-intro">Click or tap any piece below to view it in high-resolution full size.</p>
+        
+        <!-- CHANGE: Expanded gallery grid holding up to 9 image cards -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <a href="#art-1">
+              <img src="images/art1.jpg" alt="Neon Street Skater Art" onerror="this.src='https://placehold.co/600x450/03191E/71CD21?text=Neon+Skater+Key+Art'">
+              <div class="gallery-caption">Neon Skater Key Art</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-2">
+              <img src="images/art2.jpg" alt="Cyberpunk Weapon Concept" onerror="this.src='https://placehold.co/600x450/2259C8/FFFCF7?text=Plasma+Blaster'">
+              <div class="gallery-caption">Plasma Blaster Design</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-3">
+              <img src="images/art3.jpg" alt="Grungy Environment Texture" onerror="this.src='https://placehold.co/600x450/333333/71CD21?text=Graffiti+Alley'">
+              <div class="gallery-caption">Graffiti Alley Map</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-4">
+              <img src="images/art4.jpg" alt="Speed Runner Sprite Sheet" onerror="this.src='https://placehold.co/600x450/03191E/2259C8?text=Sprite+Animation'">
+              <div class="gallery-caption">Speed Runner Sprites</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-5">
+              <img src="images/art5.jpg" alt="Cyber Mech Helmet Design" onerror="this.src='https://placehold.co/600x450/333333/EFDF37?text=Mech+Helmet'">
+              <div class="gallery-caption">Cyber Mech Helmet</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-6">
+              <img src="images/art6.jpg" alt="Arcade Cabinet Interface" onerror="this.src='https://placehold.co/600x450/2259C8/71CD21?text=Arcade+Cabinet'">
+              <div class="gallery-caption">Retro Arcade Interface</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-7">
+              <img src="images/art7.jpg" alt="Boss Arena Concept" onerror="this.src='https://placehold.co/600x450/03191E/EFDF37?text=Boss+Arena+Concept'">
+              <div class="gallery-caption">Boss Arena Concept</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-8">
+              <img src="images/art8.jpg" alt="Voxel Style Character Model" onerror="this.src='https://placehold.co/600x450/333333/71CD21?text=Voxel+Rival'">
+              <div class="gallery-caption">Voxel Rival Model</div>
+            </a>
+          </div>
+
+          <div class="gallery-item">
+            <a href="#art-9">
+              <img src="images/art9.jpg" alt="Urban Splatter Mural" onerror="this.src='https://placehold.co/600x450/2259C8/FFFCF7?text=Urban+Splatter+Mural'">
+              <div class="gallery-caption">Urban Splatter Mural</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHANGE: Lightbox modals expanded for all 9 gallery image cards -->
+      <div id="art-1" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art1.jpg" alt="Neon Street Skater Art Full" onerror="this.src='https://placehold.co/1000x750/03191E/71CD21?text=Neon+Skater+Key+Art+(Expanded)'">
+          <p>Neon Skater Key Art — High-energy promotional illustration focusing on motion lines and vivid electric contrast.</p>
+        </div>
+      </div>
+
+      <div id="art-2" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art2.jpg" alt="Cyberpunk Weapon Concept Full" onerror="this.src='https://placehold.co/800x1000/2259C8/FFFCF7?text=Plasma+Blaster+(Expanded)'">
+          <p>Plasma Blaster Concept — Breakdown sheet for modular weapons in sci-fi combat games.</p>
+        </div>
+      </div>
+
+      <div id="art-3" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art3.jpg" alt="Grungy Environment Texture Full" onerror="this.src='https://placehold.co/800x600/333333/71CD21?text=Graffiti+Alley+(Expanded)'">
+          <p>Graffiti Alley — Environmental texture study combining urban grunge with vivid graffiti overlay elements.</p>
+        </div>
+      </div>
+
+      <div id="art-4" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art4.jpg" alt="Speed Runner Sprite Sheet Full" onerror="this.src='https://placehold.co/1000x700/03191E/2259C8?text=Sprite+Animation+(Expanded)'">
+          <p>Speed Runner Sprites — Frame-by-frame break of key movement states for a 2D platformer.</p>
+        </div>
+      </div>
+
+      <div id="art-5" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art5.jpg" alt="Cyber Mech Helmet Full" onerror="this.src='https://placehold.co/800x800/333333/EFDF37?text=Cyber+Mech+Helmet+(Expanded)'">
+          <p>Cyber Mech Helmet — Concept angles and wearable UI schematics.</p>
+        </div>
+      </div>
+
+      <div id="art-6" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art6.jpg" alt="Arcade Cabinet Interface Full" onerror="this.src='https://placehold.co/800x800/2259C8/71CD21?text=Arcade+Cabinet+(Expanded)'">
+          <p>Retro Arcade Interface — Vector design formatted for cabinet displays.</p>
+        </div>
+      </div>
+
+      <div id="art-7" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art7.jpg" alt="Boss Arena Concept Full" onerror="this.src='https://placehold.co/1000x650/03191E/EFDF37?text=Boss+Arena+Concept+(Expanded)'">
+          <p>Boss Arena Concept — High-scale environment render for boss phase encounters.</p>
+        </div>
+      </div>
+
+      <div id="art-8" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art8.jpg" alt="Voxel Rival Model Full" onerror="this.src='https://placehold.co/800x800/333333/71CD21?text=Voxel+Rival+Model+(Expanded)'">
+          <p>Voxel Rival Model — Low-poly character sculpt prepared for engine animation.</p>
+        </div>
+      </div>
+
+      <div id="art-9" class="lightbox">
+        <a href="#art" class="lightbox-close">&times;</a>
+        <div class="lightbox-content">
+          <img src="images/art9.jpg" alt="Urban Splatter Mural Full" onerror="this.src='https://placehold.co/1000x650/2259C8/FFFCF7?text=Urban+Splatter+Mural+(Expanded)'">
+          <p>Urban Splatter Mural — Expressive street art concept showcasing signature lime and blue ink bursts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. NARRATIVE WORLDS SECTION (BG: #FFFCF7) -->
+    <!-- CHANGE: Alternating background color #FFFCF7 with generous padding -->
+    <section id="narratives" class="narratives-section">
+      <div class="container">
+        <h2 class="section-title">Narrative Worlds</h2>
+        <p class="section-intro">Scroll or swipe through four original universe synopses.</p>
+        
+        <div class="carousel-container narrative-carousel">
+          <div class="carousel-card narrative-card">
+            <h3>1. Sector 9: Splatter District</h3>
+            <span class="world-tag">Cyberpunk / Underground</span>
+            <p>
+              In a subterranean metropolis where color is contraband, rogue graffiti crews battle militarized megacorporations using weaponized paint-throwers to reclaim authority over the city's broadcast towers.
+            </p>
+          </div>
+
+          <div class="carousel-card narrative-card">
+            <h3>2. Velocity Horizon</h3>
+            <span class="world-tag">Sci-Fi Racing / Punk</span>
+            <p>
+              Set on an orbital ring station, outlaw speedsters pilot anti-gravity hoverbikes through crumbling solar sails, risking hyper-space collapse to win ultimate freedom for their home colony.
+            </p>
+          </div>
+
+          <div class="carousel-card narrative-card">
+            <h3>3. Aetherpunk Rebellion</h3>
+            <span class="world-tag">Fantasy / Mechanical</span>
+            <p>
+              A high-fantasy dieselpunk realm where rebellious sky-pirates harness enchanted lightning crystals to foil the tyrannical iron armada marching across floating island archipelagos.
+            </p>
+          </div>
+
+          <div class="carousel-card narrative-card">
+            <h3>4. Echoes of the Void</h3>
+            <span class="world-tag">Cosmic Horror / Action</span>
+            <p>
+              When a deep-space mining station accidentally pierces a dimension of living dark matter, a lone sound engineer must craft acoustic weapons from industrial noise gear to survive.
+            </p>
+          </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 5. GAME PROTOTYPES SECTION (BG: #03191E) -->
+    <!-- CHANGE: Alternating background color #03191E with generous padding -->
+    <section id="prototypes" class="prototypes-section">
+      <div class="container">
+        <h2 class="section-title">Game Prototypes</h2>
+        <p class="section-intro">Slide through four playable gameplay clips and interactive mechanics tests.</p>
+
+        <!-- CHANGE: Looping carousel with duplicated items for continuous wrap sliding -->
+        <div class="carousel-container prototype-carousel">
+          <div class="carousel-card prototype-card">
+            <div class="video-wrapper">
+              <video controls poster="https://placehold.co/500x300/03191E/71CD21?text=Play+Prototype+1">
+                <source src="videos/prototype1.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <h3>Ink Chaos Tactics</h3>
+            <p>A fast 3v3 arena brawler focused on turf painting and dynamic territorial control.</p>
+          </div>
+
+          <div class="carousel-card prototype-card">
+            <div class="video-wrapper">
+              <video controls poster="https://placehold.co/500x300/2259C8/FFFCF7?text=Play+Prototype+2">
+                <source src="videos/prototype2.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <h3>Dash Velocity 2D</h3>
+            <p>High-speed momentum platformer testing wall-bounce physics and hyper-dash loops.</p>
+          </div>
+
+          <div class="carousel-card prototype-card">
+            <div class="video-wrapper">
+              <video controls poster="https://placehold.co/500x300/333333/71CD21?text=Play+Prototype+3">
+                <source src="videos/prototype3.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <h3>Graffiti Rebellion</h3>
+            <p>First-person rhythm parkour game where painting surfaces accelerates player movement.</p>
+          </div>
+
+          <div class="carousel-card prototype-card">
+            <div class="video-wrapper">
+              <video controls poster="https://placehold.co/500x300/03191E/EFDF37?text=Play+Prototype+4">
+                <source src="videos/prototype4.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <h3>Mecha Rumble Arena</h3>
+            <p>Top-down mech combat prototype featuring custom weapon loadouts and destruction physics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT ME SECTION (BG: #FFFCF7) -->
+    <!-- CHANGE: Alternating background color #FFFCF7 with generous padding -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-intro">Ready to collaborate, hire, or talk game design? Drop a message below!</p>
+        
+        <form class="contact-form" action="mailto:jaydoe@example.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Your Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="Email" placeholder="yourname@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" rows="6" placeholder="Tell me about your project or offer..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-block">Send Message</button>
+        </form>
+
+        <p class="direct-email">
+          Or reach out directly via email at <a href="mailto:jaydoe@example.com">jaydoe@example.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>JAY DOE</h3>
+        <p class="tagline">Crafting explosive game experiences & bold visual worlds.</p>
+        <p class="copyright">&copy; 2026 Jay Doe. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#art">Art</a></li>
+          <li><a href="#narratives">Narratives</a></li>
+          <li><a href="#prototypes">Prototypes</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

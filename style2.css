@@ -1,0 +1,820 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & TYPOGRAPHY
+   Colors:
+   - Base Background: #03191E (Deep dark teal/black)
+   - Secondary Background: #FFFCF7 (Off-White)
+   - Dark Gray: #333333
+   - Electric Green: #71CD21
+   - Sonic Blue: #2259C8
+   - Accent Highlight: #EFDF37 (Electric Yellow)
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CHANGE: Enabled CSS smooth scrolling for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #03191E;
+  color: #FFFCF7;
+  line-height: 1.6;
+}
+
+/* PRESERVED FONTS: Heading Font Settings (BBH Bartle) */
+h1, h2, h3 {
+  font-family: "BBH Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+/* PRESERVED FONTS: Body / UI Font Settings (Baloo Bhai 2) */
+p, h4, .btn, .badge, a, label, .form-group, .world-tag {
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Reusable Centered Container */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* CHANGE: Increased vertical whitespace between sections (at least 80px padding) */
+section {
+  padding: 95px 0;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Grungy accent bar under section titles */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 6px;
+  background-color: #71CD21;
+  margin: 10px auto 25px auto;
+  transform: skewX(-12deg);
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 35px;
+}
+
+/* Reusable Buttons (WITH ROUNDED CORNERS) */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px; /* Buttons have rounded corners */
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background-color: #71CD21;
+  color: #03191E;
+}
+
+.btn-primary:hover {
+  background-color: #5bb214;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(113, 205, 33, 0.5);
+}
+
+.btn-secondary {
+  background-color: #2259C8;
+  color: #FFFCF7;
+}
+
+.btn-secondary:hover {
+  background-color: #1a45a0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(34, 89, 200, 0.5);
+}
+
+.btn-accent {
+  background-color: #EFDF37;
+  color: #03191E;
+  border-color: #EFDF37;
+}
+
+.btn-accent:hover {
+  background-color: #d6c62c;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(239, 223, 55, 0.5);
+}
+
+.btn-social {
+  background-color: #2259C8;
+  color: #FFFCF7;
+  margin-right: 12px;
+  margin-top: 15px;
+}
+
+.btn-social:hover {
+  background-color: #71CD21;
+  color: #03191E;
+}
+
+/* Yellow Highlight Badge */
+.badge {
+  display: inline-block;
+  background-color: #EFDF37;
+  color: #03191E;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+
+/* ==========================================================================
+   2. STICKY HEADER & NAV UNDERLINE ANIMATION
+   ========================================================================== */
+
+/* CHANGE: Made header sticky at top with subtle box-shadow */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #03191E;
+  border-bottom: 4px solid #71CD21;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle box shadow on sticky header */
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.logo-img {
+  max-height: 45px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* CHANGE: Position relative added to support nav link smooth underline animation */
+.main-nav a {
+  position: relative;
+  color: #FFFCF7;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  padding: 5px 2px;
+  transition: color 0.3s ease;
+}
+
+/* CHANGE: Created pseudo-element for smooth underline hover animation */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #71CD21;
+  transform: scaleX(0); /* Hidden initial state */
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* CHANGE: Hover triggers smooth underline expansion */
+.main-nav a:hover {
+  color: #EFDF37;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1); /* Smooth underline expands on hover */
+  transform-origin: left;
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION & LOOPING CAROUSEL (BG: #03191E)
+   ========================================================================== */
+
+/* CHANGE: Section 1 background set to #03191E */
+.hero-section {
+  background-color: #03191E;
+  color: #FFFCF7;
+}
+
+.hero-section .section-title {
+  color: #FFFCF7;
+}
+
+.hero-section .section-intro {
+  color: #EFDF37;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) contrast(1.2);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #FFFCF7;
+  padding: 40px 20px;
+  max-width: 850px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: #FFFCF7;
+  text-shadow: 3px 3px 0px #71CD21, 6px 6px 0px #2259C8;
+  margin-bottom: 5px;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  color: #EFDF37;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.hero-welcome {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #FFFCF7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showcase-wrapper {
+  margin-top: 50px;
+}
+
+/* CHANGE: Carousel container formatted with scroll-snap for continuous sliding loop */
+.carousel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Smooth snap scroll */
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Styled Carousel Scrollbar */
+.carousel-container::-webkit-scrollbar {
+  height: 10px;
+}
+.carousel-container::-webkit-scrollbar-track {
+  background: #333333;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #71CD21;
+}
+
+/* CHANGE: Carousel cards set to equal height using flex column layout */
+.carousel-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column; /* Equal height card structure */
+  background-color: #333333;
+  color: #FFFCF7;
+  border-radius: 0; /* Sharp card edges */
+  overflow: hidden;
+  border: 2px solid #2259C8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CHANGE: Hover effect lifts card by 6px and deepens shadow */
+.carousel-card:hover {
+  transform: translateY(-6px); /* Lifts card by 6px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Deepens shadow */
+  border-color: #EFDF37;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #71CD21;
+}
+
+.carousel-card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Fills remaining card height equally */
+}
+
+.carousel-card-body h3 {
+  color: #71CD21;
+  margin-bottom: 8px;
+}
+
+
+/* ==========================================================================
+   4. ABOUT ME SECTION (BG: #FFFCF7 - Alternating)
+   ========================================================================== */
+
+/* CHANGE: Alternating section background color to #FFFCF7 */
+.about-section {
+  background-color: #FFFCF7;
+  color: #333333;
+}
+
+.about-section .section-title {
+  color: #03191E;
+}
+
+.about-grid {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #333333;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 0; /* Sharp card style */
+  border: 4px solid #03191E;
+  box-shadow: 8px 8px 0px #2259C8;
+}
+
+
+/* ==========================================================================
+   5. ART GALLERY SECTION & LIGHTBOX (BG: #03191E - Alternating)
+   ========================================================================== */
+
+/* CHANGE: Alternating section background color to #03191E */
+.art-section {
+  background-color: #03191E;
+  color: #FFFCF7;
+}
+
+.art-section .section-title {
+  color: #FFFCF7;
+}
+
+.art-section .section-intro {
+  color: #EFDF37;
+}
+
+/* CHANGE: Configured grid to display up to 9 image cards */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* CHANGE: Gallery items set to equal height frame with -6px hover lift & deepened shadow */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  height: 260px; /* Equal frame height for gallery cards */
+  border-radius: 0; /* Sharp card corners */
+  border: 2px solid #71CD21;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CHANGE: Hover effect lifts gallery card by 6px and deepens shadow */
+.gallery-item:hover {
+  transform: translateY(-6px); /* Lifts card by 6px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Deepens shadow */
+  border-color: #EFDF37;
+}
+
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(3, 25, 30, 0.9);
+  color: #EFDF37;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 25, 30, 0.95);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-content {
+  background-color: #333333;
+  border: 3px solid #EFDF37;
+  padding: 20px;
+  border-radius: 0;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  color: #FFFCF7;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  border: 1px solid #71CD21;
+  margin-bottom: 15px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #EFDF37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* ==========================================================================
+   6. NARRATIVE WORLDS SECTION (BG: #FFFCF7 - Alternating)
+   ========================================================================== */
+
+/* CHANGE: Alternating section background color to #FFFCF7 */
+.narratives-section {
+  background-color: #FFFCF7;
+  color: #333333;
+}
+
+.narratives-section .section-title {
+  color: #03191E;
+}
+
+.narratives-section .section-intro {
+  color: #2259C8;
+}
+
+/* CHANGE: Equal height narrative cards with hover lift (-6px) & deepened shadow */
+.narrative-card {
+  flex: 0 0 310px;
+  display: flex;
+  flex-direction: column; /* Equal height flex alignment */
+  background-color: #03191E;
+  color: #FFFCF7;
+  padding: 25px;
+  border: 2px solid #71CD21;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CHANGE: Card hover lifts by 6px and deepens shadow */
+.narrative-card:hover {
+  transform: translateY(-6px); /* Lifts card by 6px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deepens shadow */
+  border-color: #EFDF37;
+}
+
+.narrative-card h3 {
+  color: #EFDF37;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.world-tag {
+  display: inline-block;
+  background-color: #2259C8;
+  color: #FFFCF7;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+
+/* ==========================================================================
+   7. GAME PROTOTYPES SECTION (BG: #03191E - Alternating)
+   ========================================================================== */
+
+/* CHANGE: Alternating section background color to #03191E */
+.prototypes-section {
+  background-color: #03191E;
+  color: #FFFCF7;
+}
+
+.prototypes-section .section-title {
+  color: #FFFCF7;
+}
+
+.prototypes-section .section-intro {
+  color: #EFDF37;
+}
+
+/* CHANGE: Equal height prototype cards with hover lift (-6px) & deepened shadow */
+.prototype-card {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column; /* Equal height card structure */
+  background-color: #333333;
+  color: #FFFCF7;
+  padding: 15px;
+  border-radius: 0;
+  border: 2px solid #2259C8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CHANGE: Card hover lifts by 6px and deepens shadow */
+.prototype-card:hover {
+  transform: translateY(-6px); /* Lifts card by 6px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Deepens shadow */
+  border-color: #EFDF37;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 200px;
+  border-radius: 0;
+  border: 2px solid #71CD21;
+  background-color: #000;
+}
+
+.prototype-card h3 {
+  color: #71CD21;
+  margin: 12px 0 6px 0;
+}
+
+.prototype-card p {
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   8. CONTACT ME SECTION (BG: #FFFCF7 - Alternating)
+   ========================================================================== */
+
+/* CHANGE: Alternating section background color to #FFFCF7 */
+.contact-section {
+  background-color: #FFFCF7;
+  color: #333333;
+}
+
+.contact-section .section-title {
+  color: #03191E;
+}
+
+.contact-section .section-intro {
+  color: #333333;
+}
+
+.contact-form {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #03191E;
+  color: #FFFCF7;
+  padding: 30px;
+  border-radius: 0;
+  border: 2px solid #71CD21;
+  box-shadow: 6px 6px 0px #2259C8;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #71CD21;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #03191E;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #FFFCF7;
+  color: #03191E;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #EFDF37;
+}
+
+.btn-block {
+  width: 100%;
+  text-align: center;
+}
+
+.direct-email {
+  text-align: center;
+  margin-top: 25px;
+  color: #03191E;
+}
+
+.direct-email a {
+  color: #2259C8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.direct-email a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   9. FOOTER SECTION
+   ========================================================================== */
+
+.site-footer {
+  background-color: #03191E;
+  border-top: 4px solid #71CD21;
+  padding: 40px 0 20px 0;
+  color: #FFFCF7;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-info h3 {
+  color: #71CD21;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #EFDF37;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}
+
+.footer-links h4 {
+  color: #71CD21;
+  margin-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #FFFCF7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #EFDF37;
+}
+
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 280px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+}
